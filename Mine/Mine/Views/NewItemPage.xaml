@@ -19,11 +19,30 @@
             
             <Label Text="Description" FontSize="Medium" />
             <Editor Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small" Margin="0" />
-
+            
+            <!-- Adding Value in the Create Page to display the Item's value-->
             <Label Text="Value" FontSize="Medium" />
-            <Editor Text="{Binding Item.Value}" d:Text="Item description" FontSize="Small" Margin="0" />
+            <StackLayout
+                Orientation="Horizontal">
+                <!-- The way of input Item.Value is a stepper -->
+                <Stepper
+                    Value="{Binding Item.Value, Mode = TwoWay}"
+                    Minimum="0"
+                    Maximum="10"
+                    Increment="1"
+                    ValueChanged="Value_OnStepperValueChanged"
+                    />
+                <!-- "ValueValue" is the name of the binding label so we can access it from cs code to update it -->
+                <Label 
+                    x:Name="ValueValue"  
+                    Text="{Binding Item.Value}"  
+                    FontSize="Medium"
+                    />
+                
+            </StackLayout>
             
         </StackLayout>
+        
     </ContentPage.Content>
     
 </ContentPage>
