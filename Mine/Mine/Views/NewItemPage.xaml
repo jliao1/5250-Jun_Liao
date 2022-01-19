@@ -38,6 +38,7 @@
                     x:Name="ValueValue"  
                     Text="{Binding Item.Value}"  
                     FontSize="Medium"
+                    VerticalOptions="Center"
                     />
                 
             </StackLayout>
