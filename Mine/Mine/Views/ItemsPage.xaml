@@ -43,7 +43,7 @@
                                     LineBreakMode="NoWrap" 
                                     Style="{DynamicResource ListItemTextStyle}" 
                                     FontSize="16" />
-                                
+                                <Label Text=" = " />
                                 <Label Text="{Binding Value}" />
                                 
                             </StackLayout>
