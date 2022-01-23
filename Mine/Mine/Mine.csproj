@@ -16,13 +16,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\Game\Items\ItemCreatePage.xaml.cs">
+    <Compile Update="Views\Items\ItemCreatePage.xaml.cs">
       <DependentUpon>ItemCreatePage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Game\Items\ItemReadPage.xaml.cs">
+    <Compile Update="Views\Items\ItemReadPage.xaml.cs">
       <DependentUpon>ItemReadPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Game\Items\ItemIndexPage.xaml.cs">
+    <Compile Update="Views\Items\ItemIndexPage.xaml.cs">
       <DependentUpon>ItemIndexPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
