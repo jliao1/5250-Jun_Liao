@@ -94,7 +94,7 @@ namespace Mine.ViewModels
         }
 
         /// <summary>
-        /// Delete the item ecord from the system
+        /// Delete the item record from the system
         /// </summary>
         /// <param name="data">The item record to delete</param>
         /// <returns>Ture if successfully deleted</returns>
