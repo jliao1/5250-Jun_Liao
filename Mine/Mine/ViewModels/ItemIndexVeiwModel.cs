@@ -33,6 +33,12 @@ namespace Mine.ViewModels
                 DataSet.Add(newItem);
                 await DataStore.CreateAsync(newItem);
             });
+
+            MessagingCenter.Subscribe<ItemDeletePage, ItemModel>(this, "DeleteItem", async (obj, item) =>
+            {
+                var data = item as ItemModel;
+                await DeleteAsyc(data);
+            });
         }
 
         async Task ExecuteLoadItemsCommand()
