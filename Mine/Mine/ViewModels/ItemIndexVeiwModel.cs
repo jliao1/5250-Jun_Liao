@@ -39,6 +39,12 @@ namespace Mine.ViewModels
                 var data = item as ItemModel;
                 await DeleteAsyc(data);
             });
+
+            MessagingCenter.Subscribe<ItemUpdatePage, ItemModel>(this, "UpdateItem", async (obj, item) =>
+            {
+                var data = item as ItemModel;
+                await UpdateAsyc(data);
+            });
         }
 
         async Task ExecuteLoadItemsCommand()
@@ -78,7 +84,6 @@ namespace Mine.ViewModels
         /// There is a read method in the MockDataStore, so just need to 
         /// call to it. This “ReadAsync” method that will read the item 
         /// from the datastore, If the item exist, then Delete can continue.
-
         /// </summary>
         /// <param name="id">Id of the Record</param>
         /// <returns>The record from ReadAsync</returns>
@@ -112,5 +117,26 @@ namespace Mine.ViewModels
             return result;
         }
 
+        public async Task<bool> UpdateAsyc(ItemModel data)
+        {
+            // Check if the record exists,
+            // if it does not, then False is returned
+            var record = await ReadAsync(data.Id);
+            if (record == null)
+            {
+                return false;
+            }
+
+            // Call to update it from the Data Store
+            var result = await DataStore.UpdateAsync(data);
+
+            // Need the list box on ItemIndex to refresh
+            // The way to do it is to force the ItemIndexViewModel
+            // to refresh the dataset
+            var canExecute = LoadItemsCommand.CanExecute(null);
+            LoadItemsCommand.Execute(null);
+
+            return result;
+        }
     }
 }
