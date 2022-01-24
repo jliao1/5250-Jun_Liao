@@ -35,5 +35,10 @@ namespace Mine.Views
             viewModel = new ItemReadViewModel(item);
             BindingContext = viewModel;
         }
+
+        public async void DeleteItem_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new ItemDeletePage(viewModel)));
+        }
     }
 }
