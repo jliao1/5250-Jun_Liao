@@ -16,9 +16,14 @@
         <StackLayout Spacing="20" Padding="15">
             <Label Text="Text" FontSize="Medium" />
             <Entry Text="{Binding Item.Text}" d:Text="Item name" FontSize="Small" />
-            
+
+            <!--The EditorView needs to be told the resize after being created when the text changes-->
             <Label Text="Description" FontSize="Medium" />
-            <Editor Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small" Margin="0" />
+            <Editor Text="{Binding Item.Description}" 
+                    d:Text="Item description" 
+                    FontSize="Small" 
+                    Margin="0" 
+                    AutoSize="TextChanges"/>
             
             <!-- Adding Value in the Create Page to display the Item's value-->
             <Label Text="Value" FontSize="Medium" />
