@@ -38,5 +38,25 @@ namespace Mine.Views
             BindingContext = viewModel;
         }
 
+        /// <summary>
+        /// Cause the cancel to occur
+        /// </summary>
+        public async void Cancel_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
+        }
+
+
+        /// <summary>
+        /// Cause the delete to occur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public async void DeleteItem_Clicked(object sender, EventArgs e)
+        {
+            MessagingCenter.Send(this, "DeleteItem", viewModel.Item);
+            await Navigation.PopModalAsync();
+        }
+
     }
 }
