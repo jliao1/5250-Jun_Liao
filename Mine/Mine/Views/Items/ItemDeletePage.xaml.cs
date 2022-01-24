@@ -13,6 +13,8 @@ namespace Mine.Views
     [DesignTimeVisible(false)]
     public partial class ItemDeletePage : ContentPage
     {
+        // Item Delete needs the item to delete, in our
+        // case we have it stored as a class variable here
         ItemReadViewModel viewModel;
 
         public ItemDeletePage(ItemReadViewModel viewModel)
@@ -35,5 +37,6 @@ namespace Mine.Views
             viewModel = new ItemReadViewModel(item);
             BindingContext = viewModel;
         }
+
     }
 }
