@@ -18,8 +18,12 @@
             <Entry Text="{Binding Item.Text}" d:Text="Item name" FontSize="Small" />
             
             <Label Text="Description" FontSize="Medium" />
-            <Editor Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small" Margin="0" />
-            
+            <Editor Text="{Binding Item.Description}" 
+                    d:Text="Item description" 
+                    FontSize="Small" 
+                    Margin="0" 
+                    AutoSize="TextChanges"/>
+
             <!-- Adding Value in the Create Page to display the Item's value-->
             <Label Text="Value" FontSize="Medium" />
             <!-- Use a horizontal stack to put the Stepper and Value on the same Line-->
