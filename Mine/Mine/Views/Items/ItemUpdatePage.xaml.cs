@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using Mine.Models;
+using Mine.ViewModels;
 
 namespace Mine.Views
 {
@@ -25,6 +26,13 @@ namespace Mine.Views
                 Description = "This is an item description."
             };
 
+            BindingContext = this;
+        }
+
+        public ItemUpdatePage(ItemReadViewModel viewModel)
+        {
+            InitializeComponent();
+            Item = viewModel.Item;
             BindingContext = this;
         }
 
