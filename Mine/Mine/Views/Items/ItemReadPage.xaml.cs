@@ -55,6 +55,7 @@ namespace Mine.Views
         public async void UpdateItem_Clicked(object sender, EventArgs e) 
         {
             await Navigation.PushModalAsync(new NavigationPage(new ItemUpdatePage(viewModel)));
+            // Pop Stack after DelteItem_Clicked
             await Navigation.PopAsync();
         }
     }
