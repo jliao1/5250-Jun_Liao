@@ -38,7 +38,7 @@ namespace Mine.Services
         /// <summary>
         /// Create a new record for the data passed in
         /// </summary>
-        /// <param name="data"></param>
+        /// <param name="item"></param>
         /// <returns></returns>
         public async Task<bool> CreateAsync(ItemModel item)
         {
@@ -65,9 +65,23 @@ namespace Mine.Services
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Return the record for the ID passed in
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Task<ItemModel> ReadAsync(string id)
         {
-            throw new NotImplementedException();
+            if (id == null)
+            {
+                return null;
+            }
+
+            // Call the Database to read the id
+            // Using the  Ling syntax   Find the first record that has the matched id 
+            var result = Database.Table<ItemModel>().FirstOrDefaultAsync(m => m.Id.Equals(id));
+
+            return result;
         }
 
         /// <summary>
