@@ -12,6 +12,8 @@ namespace Mine.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        // This is what sets the DB to go to get the implementation of DataService
+        // DependencyService is a feature of Xamarin that will go find who implements a service and load it
         public IDataStore<ItemModel> DataStore => DependencyService.Get<IDataStore<ItemModel>>();
 
         bool isBusy = false;
