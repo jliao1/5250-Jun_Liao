@@ -93,7 +93,7 @@ namespace Mine.Services
             {
                 return false;
             }
-            return true
+            return true;
         }
 
         /// <summary>
