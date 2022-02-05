@@ -17,4 +17,8 @@
     <ProjectReference Include="..\Mine\Mine\Mine.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+  </ItemGroup>
+
 </Project>
